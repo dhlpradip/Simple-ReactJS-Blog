@@ -1,17 +1,29 @@
-
-import BlogList from "./BlogList";
-import useFetch from "./useFetch"
+import { Link } from "react-router-dom";
+import Blogs from "./Blogs";
 
 
 const Home = () => {
-    const { data: blogs, isPending, error } = useFetch('http://localhost:8000/blogs');
     
     return (
-        <div className="home">
-            {error && <div> { error } </div> }
-            {isPending && <div>Loading.....</div> }
-            {blogs && <BlogList blogs = {blogs} title="All  Blogs!" />}
-        
+        <div>
+            <div>
+            <Link to="/login"style={{
+                color: "white",
+                backgroundColor: "#f1356d",
+                borderRadius: '8px',
+                padding: '10px',
+                textDecoration: 'none',
+                float:'right'
+            }} >Admin</Link>
+            </div>
+            <div>
+
+            </div>
+            <div>
+            <br/>
+            <br/>
+        </div>
+        <Blogs />
         </div> 
     );
 }

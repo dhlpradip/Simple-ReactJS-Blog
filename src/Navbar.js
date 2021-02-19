@@ -1,18 +1,21 @@
 import { Link } from "react-router-dom";
 
+import { HashLink} from 'react-router-hash-link';
 const Navbar  = () => {
     return (
         <nav className="navbar">
-        <h1><Link to ="/">Pradeep Dahal</Link></h1>
+        <h1><HashLink smooth to ="/">Pradeep</HashLink></h1>
 
         <div className="links">
-            <Link to="/">Home</Link>
-            <Link to="/create"style={{
+            <HashLink smooth to="/#">Home</HashLink>
+            <HashLink smooth to="/#contact">Contact</HashLink>
+            <Link to="/blog"style={{
                 color: "white",
                 backgroundColor: "#f1356d",
                 borderRadius: '8px'
 
-            }} >New Blog</Link>
+            }} >Blog</Link>
+
         </div>
         </nav>
     );
